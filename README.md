@@ -70,11 +70,11 @@ In order to run this project you need:
 
 ### Setup
 
-Clone this [repository](https://github.com/Fayob/catalog_of_my_things) to your desired folder:
+Clone this [repository]()https://github.com/nunegabriel/Catalog-of-my-things.git to your desired folder:
 
 ```sh
   cd my-folder
-  git clone https://github.com/Fayob/catalog_of_my_things.git
+  https://github.com/nunegabriel/Catalog-of-my-things.git
   cd catalog_of_my_things
 ```
 
