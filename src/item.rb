@@ -27,7 +27,7 @@ class Item
   def can_be_archived?
     @now = Date.today
     @date = Date.parse(@publish_date)
-    ((@now - @ date)/ 365).floor > 10
+    ((@now - @date)/ 365).floor > 10
   end
 
   def moved_to_archive
