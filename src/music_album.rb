@@ -14,5 +14,3 @@ class MusicAlbum < Item
         @on_spotify && @archived
     end
 end
-
-end
