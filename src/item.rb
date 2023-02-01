@@ -3,7 +3,7 @@ class Item
   attr_reader :id
 
   def initialize(publish_date, archived: false)
-    @id = rand (10...1000)
+    @id = rand (100...1000)
     @publish_date = publish_date
     @arcived = archived
   end
@@ -12,7 +12,7 @@ class Item
     genre.item = self
   end
 
-  def author =(author)
+  def author=(author)
     author.item = self
   end
 
