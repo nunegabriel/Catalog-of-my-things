@@ -21,48 +21,48 @@ class App
   end
 
   def first_choices(input)
-    case inputs
+    case input
     when 1
-        puts 'list_books'
+      puts 'list_books'
     when 2
-        puts 'list_music_album'
+      puts 'list_music_album'
     when 3
-        puts 'list_games'
+      puts 'list_games'
     end
   end
 
   def second_choice(input)
     case input
     when 4
-        puts 'list_genres'
+      puts 'list_genres'
     when 5
-        puts 'list_labels'
+      puts 'list_labels'
     when 6
-        puts 'list_authors'
+      puts 'list_authors'
     when 7
-        puts 'list_sources'
+      puts 'list_sources'
     end
   end
 
   def third_choices(input)
     case input
     when 8
-        puts 'add_book'
+      puts 'add_book'
     when 9
-        puts 'add_music_album'
+      puts 'add_music_album'
     when 10
-        puts 'add_game'
+      puts 'add_game'
     end
   end
 
-  def first_choices
+  def choices
     list_options
     input = gets.chomp.to_1
 
     if input.positive? && input < 4
       first_choices(input)
     elsif input > 3 && input < 8
-      second_choices(input) 
+      second_choices(input)
     elsif input > 7 && input < 11
       third_choices(input)
     else
@@ -70,6 +70,3 @@ class App
     end
   end
 end
-
-
-
