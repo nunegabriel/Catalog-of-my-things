@@ -3,7 +3,7 @@ class Item
   attr_reader :id
 
   def initialize(publish_date, archived: false)
-    @id = rand (100...1000)
+    @id = rand(100...1000)
     @publish_date = publish_date
     @arcived = archived
   end
@@ -17,17 +17,17 @@ class Item
   end
 
   def source=(source)
-    source.item =self
+    source.item = self
   end
 
   def label=(label)
-    label.item =self
+    label.item = self
   end
 
   def can_be_archived?
     @now = Date.today
     @date = Date.parse(@publish_date)
-    ((@now - @date)/ 365).floor > 10
+    ((@now - @date) / 365).floor > 10
   end
 
   def moved_to_archive
