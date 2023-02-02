@@ -57,12 +57,12 @@ class App
 
   def choices
     list_options
-    input = gets.chomp.to_1
+    input = gets.chomp.to_i
 
     if input.positive? && input < 4
       first_choices(input)
     elsif input > 3 && input < 8
-      second_choices(input)
+      second_choice(input)
     elsif input > 7 && input < 11
       third_choices(input)
     else
