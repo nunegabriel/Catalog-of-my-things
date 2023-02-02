@@ -6,7 +6,7 @@ def main
   app = App.new
 
   loop do
-    app.first_choices
+    app.choices
   end
 end
 
