@@ -1,3 +1,5 @@
+require_relative 'functions'
+
 class App
   def list_options
     op = "
@@ -25,7 +27,7 @@ class App
     when 1
       puts 'list_books'
     when 2
-      puts 'list_music_album'
+      puts list_music_album(@albums)
     when 3
       puts 'list_games'
     end
@@ -34,7 +36,7 @@ class App
   def second_choice(input)
     case input
     when 4
-      puts 'list_genres'
+      puts list_genres(@genres)
     when 5
       puts 'list_labels'
     when 6
@@ -57,12 +59,12 @@ class App
 
   def choices
     list_options
-    input = gets.chomp.to_1
+    input = gets.chomp.to_i
 
     if input.positive? && input < 4
       first_choices(input)
     elsif input > 3 && input < 8
-      second_choices(input)
+      second_choice(input)
     elsif input > 7 && input < 11
       third_choices(input)
     else

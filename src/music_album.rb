@@ -1,4 +1,5 @@
 require 'item'
+require_relative 'functions'
 
 class MusicAlbum < Item
   atter_reader :on_spotify
