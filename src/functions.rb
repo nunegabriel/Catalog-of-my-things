@@ -30,5 +30,19 @@ class Functions
     print 'Genre: '
     genre_name = gets.chomp
     @genres.push(Genre.new(genre_name))
+    save_genres
+    print 'Date of publish: '
+    publish_date = gets.chomp
+
+    print 'available on Spotify? Y/N: '
+    on_spotify = gets.chomp.upcase
+    case on_spotify
+    when 'Y'
+      @music_albums.push(MusicAlbum.new(name, publish_date, true))
+    when 'N'
+      @music_albums.push(MusicAlbum.new(name, publish_date, false))
+    end
+    puts 'Music album has been successfully created'
+    save_music_albums
   end
 end
