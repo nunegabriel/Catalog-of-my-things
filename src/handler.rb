@@ -104,14 +104,14 @@ class Handler
   end
 
   def add_music_album
-    name = input("Album name:")
-    genre_name = input("Genre:")
+    name = get_input("Album name:")
+    genre_name = get_input("Genre:")
     genre = Genre.new(genre_name)
     @genres.push(genre)
     save_genres
   
-    publish_date = input("Date of publish [Enter date in format (yyyy-mm-dd)]:")
-    on_spotify = input("Is it available on Spotify? Y/N:").downcase
+    publish_date = get_input("Date of publish [Enter date in format (yyyy-mm-dd)]:")
+    on_spotify = get_input("Is it available on Spotify? Y/N:").downcase
   
     album = MusicAlbum.new(name, publish_date, on_spotify == "y")
     @music_albums.push(album)
