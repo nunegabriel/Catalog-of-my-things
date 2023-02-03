@@ -11,8 +11,6 @@ class App < Functions
     @albums = load_albums
   end
 
-  
-
   def list_options
     op = "
     (1) List all books

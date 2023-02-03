@@ -2,34 +2,33 @@ require_relative './store'
 require 'json'
 
 class Functions
-    include Storage
+  include Storage
 
-def list_music_album
+  def list_music_album
     if @albums.empty?
-        puts 'No albums found'
+      puts 'No albums found'
     else
-        albums.each do |album|
-            puts 'found'
-        end
+      albums.each do |_album|
+        puts 'found'
+      end
     end
-end
+  end
 
-def genres
+  def genres
     if @genres.empty?
-        puts 'No genres found'
+      puts 'No genres found'
     else
-        genres.each do |genre|
-            puts 'found'
-        end
+      genres.each do |_genre|
+        puts 'found'
+      end
     end
-end
+  end
 
-def add_music_album
+  def add_music_album
     print 'Album name: '
     name = gets.chomp
     print 'Genre: '
     genre_name = gets.chomp
     @genres.push(Genre.new(genre_name))
-
-end
+  end
 end
