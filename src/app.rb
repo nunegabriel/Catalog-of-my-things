@@ -1,83 +1,95 @@
-require_relative 'functions'
-require_relative 'genre'
-require_relative 'music_album'
-require_relative 'store'
+require_relative './book'
+require_relative './label'
+require_relative './music_album'
+require_relative './genre'
+require_relative './handler'
+require_relative './game'
+require_relative './author'
+require_relative './store'
 
-class App < Functions
+class App < Handler
   def initialize
     super
+    @books = load_books
+    @labels = load_labels
+    @authors = load_authors
     @genres = load_genres
-    @albums = load_albums
+    @music_albums = load_album
+    @games = load_games
   end
 
-  def list_options
-    op = "
-    (1) List all books
-    (2) List all music albums
-    (3) List of games
-    (4) List all genres
-    (5) List all labels
-    (6) List all authors
-    (7) List all sources
-    (8) Add a book
-    (9) Add a music album
-    (10) Add a game"
-
-    puts op
+  def welcome
+    puts 'Welcome'
   end
 
-  def way_to_exit
-    puts 'Exiting'
-    exit
+  def enter
+    welcome
+    puts "Choose from below:
+        1 - Show all books
+        2 - Show all music albums
+        3 - Show of games
+        4 - Show all genres
+        5 - Show all labels
+        6 - Show all authors
+        7 - Add a book
+        8 - Add a music album
+        9 - Add a game
+        10- Exit"
+
+    print 'choice: '
+    choice = gets.chomp.to_i
+
+    exit_program if choice == 10
+
+    options(choice)
   end
 
-  def first_choices(input)
-    case input
+  # rubocop:disable Metrics/CyclomaticComplexity
+  def options(choice)
+    case choice
     when 1
-      puts 'list_books'
+      books
     when 2
       albums
     when 3
-      puts 'list_games'
-    end
-  end
-
-  def second_choice(input)
-    case input
+      games
     when 4
-      load_genres
+      genres
     when 5
-      puts 'list_labels'
+      labels
     when 6
-      puts 'list_authors'
+      authors
     when 7
-      puts 'list_sources'
-    end
-  end
-
-  def third_choices(input)
-    case input
+      add_book
     when 8
-      puts 'add_book'
+      add_music_album
     when 9
-      puts 'add_music_album'
-    when 10
-      puts 'add_game'
+      add_game
+    else
+      puts 'Select a number 1-10'
     end
+
+    option
+  end
+  # rubocop:enable Metrics/CyclomaticComplexity
+
+  def exit_program
+    puts 'bye!!!'
+    exit
   end
 
-  def choices
-    list_options
-    input = gets.chomp.to_i
+  def option
+    puts 'SELECT:
+    1 - CONTINUE
+    2 - EXIT'
 
-    if input.positive? && input < 4
-      first_choices(input)
-    elsif input > 3 && input < 8
-      second_choice(input)
-    elsif input > 7 && input < 11
-      third_choices(input)
+    print 'Option: '
+    option = gets.chomp.to_i
+
+    if option == 1
+      enter
     else
-      way_to_exit
+      exit_program
     end
   end
 end

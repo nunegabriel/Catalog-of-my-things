@@ -1,13 +1,8 @@
-require_relative './app'
+require_relative 'app'
 
 def main
-  puts 'Welcome'
-
   app = App.new
-
-  loop do
-    app.choices
-  end
+  app.enter
 end
 
 main
