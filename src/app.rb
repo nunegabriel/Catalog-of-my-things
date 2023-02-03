@@ -3,7 +3,6 @@ require_relative 'genre'
 require_relative 'music_album'
 require_relative 'store'
 
-
 class App < Functions
   def initialize
     super
