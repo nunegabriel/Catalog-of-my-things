@@ -13,7 +13,8 @@ class Game < Item
 
   def can_be_archived?
     return false unless super
+
     age = Time.now.year - @last_played_date.year
     age > 2
-  end 
+  end
 end

@@ -11,11 +11,9 @@ class Book < Item
     @publish_date = publish_date
   end
 
- 
   def can_be_archived?
     super || cover_state == 'bad'
   end
-
 
   def as_json
     {
@@ -28,9 +26,9 @@ class Book < Item
       author: author_json
     }
   end
-  
+
   private
-  
+
   def label_json
     {
       id: label.id,
@@ -38,7 +36,7 @@ class Book < Item
       color: label.color
     }
   end
-  
+
   def author_json
     {
       id: author.id,
@@ -46,4 +44,4 @@ class Book < Item
       last_name: author.last_name
     }
   end
- end
+end

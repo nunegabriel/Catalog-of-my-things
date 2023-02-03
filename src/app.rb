@@ -20,7 +20,7 @@ class App < Handler
 
   def welcome
     puts 'Welcome'
-   end
+  end
 
   def enter
     welcome
@@ -87,7 +87,7 @@ class App < Handler
     option = gets.chomp.to_i
 
     if option == 1
-      start
+      enter
     else
       exit_program
     end

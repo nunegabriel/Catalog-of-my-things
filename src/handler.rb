@@ -3,24 +3,24 @@ require_relative './store'
 class Handler
   include Storage
 
-    # option to list all labels
-    def labels
-      return puts 'No labels listed!!!' if @labels.empty?
-    
-      @labels.each_with_index do |label, i|
-        puts "#{i + 1} | Title : #{label.title} | Color: #{label.color}"
-      end
-    end 
+  # option to list all labels
+  def labels
+    return puts 'No labels listed!!!' if @labels.empty?
 
-  #list all books
+    @labels.each_with_index do |label, i|
+      puts "#{i + 1} | Title : #{label.title} | Color: #{label.color}"
+    end
+  end
+
+  # list all books
   def books
     return puts 'No books listed!!!' if @books.empty?
-  
+
     @books.each_with_index do |book, i|
       puts "#{i + 1} - Name: #{book.name} | Publisher: #{book.publisher} | Date: #{book.publish_date} | Cover State: #{book.cover_state}"
     end
   end
-  
+
   def new_author
     print 'Enter first name of Author: '
     first_name = gets.chomp
@@ -28,7 +28,7 @@ class Handler
     last_name = gets.chomp
     Author.new(first_name, last_name)
   end
-  
+
   def add_label(type)
     print "Label of the #{type}: "
     title = gets.chomp
@@ -55,7 +55,7 @@ class Handler
     save_labels
     save_authors
   end
-  
+
   def get_input(prompt)
     print prompt
     gets.chomp
@@ -85,14 +85,15 @@ class Handler
     end
   end
 
-  #list all music_albums
+  # list all music_albums
   def albums
     return puts 'No music albums listed!!!' if @music_albums.empty?
-      @music_albums.each_with_index do |music_album, i|
+
+    @music_albums.each_with_index do |music_album, i|
       puts "#{i + 1} - Name: #{music_album.name} | Date: #{music_album.publish_date} | On spotify: #{music_album.on_spotify}"
     end
   end
-  
+
   def genres
     if @genres.empty?
       puts 'No genres added!!!'
@@ -104,18 +105,18 @@ class Handler
   end
 
   def add_music_album
-    name = get_input("Album name:")
-    genre_name = get_input("Genre:")
+    name = get_input('Album name:')
+    genre_name = get_input('Genre:')
     genre = Genre.new(genre_name)
     @genres.push(genre)
     save_genres
-  
-    publish_date = get_input("Date of publish [Enter date in format (yyyy-mm-dd)]:")
-    on_spotify = get_input("Is it available on Spotify? Y/N:").downcase
-  
-    album = MusicAlbum.new(name, publish_date, on_spotify == "y")
+
+    publish_date = get_input('Date of publish [Enter date in format (yyyy-mm-dd)]:')
+    on_spotify = get_input('Is it available on Spotify? Y/N:').downcase
+
+    album = MusicAlbum.new(name, publish_date, on_spotify == 'y')
     @music_albums.push(album)
-  
+
     puts 'Music album created'
     save_music_albums
   end
