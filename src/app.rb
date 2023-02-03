@@ -1,6 +1,18 @@
 require_relative 'functions'
+require_relative 'genre'
+require_relative 'music_album'
+require_relative 'store'
 
-class App
+
+class App < Functions
+  def initialize
+    super
+    @genres = load_genres
+    @albums = load_albums
+  end
+
+  
+
   def list_options
     op = "
     (1) List all books
@@ -27,7 +39,7 @@ class App
     when 1
       puts 'list_books'
     when 2
-      puts list_music_album(@albums)
+      albums
     when 3
       puts 'list_games'
     end
@@ -36,7 +48,7 @@ class App
   def second_choice(input)
     case input
     when 4
-      puts list_genres(@genres)
+      load_genres
     when 5
       puts 'list_labels'
     when 6

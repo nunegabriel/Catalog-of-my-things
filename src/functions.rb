@@ -1,12 +1,10 @@
-class Functions
-    def initialize
-        @albums = []
-        @genres = []
-        @music = []
-    end
-end
+require_relative './store'
+require 'json'
 
-def list_music_album(albums)
+class Functions
+    include Storage
+
+def list_music_album
     if @albums.empty?
         puts 'No albums found'
     else
@@ -16,7 +14,7 @@ def list_music_album(albums)
     end
 end
 
-def list_genres(genres)
+def genres
     if @genres.empty?
         puts 'No genres found'
     else
@@ -24,4 +22,14 @@ def list_genres(genres)
             puts 'found'
         end
     end
+end
+
+def add_music_album
+    print 'Album name: '
+    name = gets.chomp
+    print 'Genre: '
+    genre_name = gets.chomp
+    @genres.push(Genre.new(genre_name))
+
+end
 end
