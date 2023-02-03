@@ -22,7 +22,7 @@ class App < Handler
     puts 'Welcome'
    end
 
-  def start
+  def enter
     welcome
     puts "Choose from below:
         1 - Show all books
