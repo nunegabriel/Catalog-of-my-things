@@ -1,0 +1,49 @@
+CREATE TABLE labels(
+id SERIAL PRIMARY KEY,
+title VARCHAR(200) NOT NULL,
+color VARCHAR(200) NOT NULL
+);
+
+CREATE TABLE authors (
+    id  INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(100),
+    last_name VARCHAR(100)
+);
+
+CREATE TABLE games (
+    id  INT PRIMARY KEY AUTO_INCREMENT,
+    multiplayer BOOLEAN,
+    last_played_at DATE,
+    FOREIGN KEY (id) REFERENCES item (id)
+);
+
+CREATE TABLE genre(
+id SERIAL PRIMARY KEY,
+name VARCHAR(60) NOT NULL
+);
+
+CREATE TABLE MusicAlbum(
+  id INT PRIMARY KEY,
+  on_spotify BOOLEAN NOT NULL,
+  FOREIGN KEY (id) REFERENCES item (id) ON UPDATE CASCADE
+);
+
+CREATE TABLE books(
+id SERIAL PRIMARY KEY,
+author_id INT REFERENCES authors(id) ON DELETE CASCADE,
+label_id INT REFERENCES labels(id) ON DELETE CASCADE,
+publisher VARCHAR(255) NOT NULL,
+publication_date DATE NOT NULL,
+cover_state VARCHAR(100) NOT NULL,
+archived BOOLEAN DEFAULT false NOT NULL
+);
+
+CREATE TABLE item(
+id SERIAL PRIMARY KEY,
+genre_id INT REFERENCES genre(id) ON UPDATE CASCADE,
+author_id INT REFERENCES author(id) ON UPDATE CASCADE,
+source_id INT REFERENCES source(id) ON UPDATE CASCADE,
+label_id INT REFERENCES label(id) ON UPDATE CASCADE,
+publish_date DATE,
+archived BOOLEAN
+);
