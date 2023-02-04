@@ -5,7 +5,7 @@ describe Genre do
     name = 'rock'
     genre = Genre.new(name)
     item = Item.new('2012-1-10', false)
-   
+
     it 'returns name instance of the genre class ' do
       expect(genre.name).to equal(name)
     end
