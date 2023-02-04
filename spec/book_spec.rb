@@ -10,7 +10,6 @@ describe 'Test the book class' do
     expect(book.publisher).to eql('lee')
   end
 
-
   it 'returns the publication date' do
     expect(book.publish_date).to eql('2013')
   end
