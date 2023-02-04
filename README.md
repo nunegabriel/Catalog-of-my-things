@@ -114,12 +114,14 @@ To run tests, run the following command:
 - Twitter: [@NowembabaziN](https://twitter.com/NowembabaziN)
 - LinkedIn: [NOWEMBABAZI-NICKSON](http://linkedin.com/in/nowembabazi-nickson/)
 
-👤 **your name**
+👤 **Gabriel Nunekpeku**
 
-- GitHub: [@nowembabazi](https://github.com/Nowembabazi)
-- Twitter: [@NowembabaziN](https://twitter.com/NowembabaziN)
-- LinkedIn: [NOWEMBABAZI-NICKSON](http://linkedin.com/in/nowembabazi-nickson/)
+- GitHub: [@nunegabriel](https://github.com/Nowembabazi)
+- Twitter: [@twitterhandle](https://twitter.com/_cornrow)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/gabriel-nunekpeku-623608173/)
 
+## 📱 DEMONSTRATION <a name="live-demo"></a>
+[VIDEO PRESENTATION](https://drive.google.com/file/d/1l_UqvFulHTnCudn3tVy8J66Wl_PDc0gM/view)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
